@@ -3,7 +3,7 @@
 
 
   /* クイックソートを行う */
-void QSort(int x[ ], int left, int right)
+void QSort(int x[N][2], int left, int right)
 {
     int i, j;
     int pivot;
@@ -11,14 +11,14 @@ void QSort(int x[ ], int left, int right)
     i = left;                      /* ソートする配列の一番小さい要素の添字 */
     j = right;                     /* ソートする配列の一番大きい要素の添字 */
 
-    pivot = x[(left + right) / 2]; /* 基準値を配列の中央付近にとる */
+    pivot = x[(left + right) / 2][1]; /* 基準値を配列の中央付近にとる */
 
     while (1) {                    /* 無限ループ */
 
-        while (x[i] < pivot)       /* pivot より大きい値が */
+        while (x[i][1] < pivot)       /* pivot より大きい値が */
             i++;                   /* 出るまで i を増加させる */
 
-        while (pivot < x[j])       /* pivot より小さい値が */
+        while (pivot < x[j][1])       /* pivot より小さい値が */
             j--;                   /*  出るまで j を減少させる */
         if (i >= j)                /* i >= j なら */
             break;                 /* 無限ループから抜ける */
